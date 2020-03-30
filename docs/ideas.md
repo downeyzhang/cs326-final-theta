@@ -1,5 +1,6 @@
 # Final Project for COMPSCI 326
-### Team Theta
+### Team name: Team Theta
+### Application name: YourWebsiteStudio
 #### Team Overview
 |Names|Github usernames|
 |  ----  | ----  |
@@ -8,7 +9,7 @@
 |Donglin Zhang|downeyzhang|
 
 #### Innovative Idea
-we plan to develop a website that allows users to create and modify their personal website (website like their resume) without programming. Users may also add friends and cite any of them in their projects or working experiences.
+We plan to develop a website that allows users to create and modify their personal website (website like their resume) without programming. Users may also add friends and cite any of them in their projects or working experiences. 
 
 #### Important Components
 1. The user has to login the website so that he can get the access to modify his own website. Otherwise, He can only write messages to pages.
