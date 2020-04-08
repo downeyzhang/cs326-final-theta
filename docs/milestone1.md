@@ -19,3 +19,4 @@ We plan to develop a website that users can find teammates for their classes. Fo
 4. In dashboard, users will see a list of posts that posted by other users, and they may also search for posts they looking for by typing post name, teammates name, or post ID via search bar.
 5. When users click on one post, a window will appear which contains class informations, Class Grading Policy, We are looking for..., Current teammates.
 6. Users may like posts and save them into "like" page.
+7. Users may comment under each post.
