@@ -21,19 +21,19 @@ We plan to develop a website that users can find teammates for their classes. Fo
     * check the teams he joined
     * leave or reply comments
 3. Users can create a post, each post would be assigned a unique ID, and each post needs 4 components: 
-    * class informations (Users phone numbers, class's syllabus, professors' names, TAs' names, and link to that class in [ratemyprofessor.com](https://www.ratemyprofessors.com/))
+    * class informations (Users phone numbers, class's syllabus, professors' names, TAs' names, and link to that class in [ratemyprofessor.com](https://www.ratemyprofessors.com/)) and detail of projects
     * Class Grading Policy
-    * Detail and requirement for teamates
+    * requirement for teamates
     * Current teammates
 4. In dashboard, users will see a list of posts that posted by other users, and they may also search for posts they looking for by typing post name, teammates name, or post ID via search bar. When users click on one post, a window will appear the detail of this post which contains all details about this post, and there would be a field to leave comments, and a button for requesting into this team.
     * The request to join would notify team leader who created the post. Team leader can approve or reject the request in the notification.
     * Users may leave comments under each post. Also, the comments will notify to all teammates in this post. When the teammate clicks the notification, the browser will jump to this post and he can reply to it.
-8. "My Posts" pages will show a list of posts which post by the user. Similar to the dashboard, user can click one of the posts to check its detail in a new interface, including class info, grading policy, requirement and name of current teammates.
-9. "My Teams" pages will show a list of posts which the user has joined. When the user click into one of posts, he can check the detail of this post, and contact info of all teammates.
+5. "Wish List" can save the posts which the user are interested in.
+6. "My Posts" pages will show a list of posts which post by the user. Similar to the dashboard, user can click one of the posts to check its detail in a new interface, including class info, grading policy, requirement and name of current teammates.
+7. "My Teams" pages will show a list of posts which the user has joined. When the user click into one of posts, he can check the detail of this post, and contact info of all teammates.
 
 
 ### User Interface
-
 
 1.  Login: There are 2 ways to login in.
     * login with google/facebook
@@ -53,8 +53,8 @@ The main page of dashboard would be serveral posts from users who comes from the
 -->
 
 3. Dashboard:
-The main page of dashboard would be serveral posts from users who comes from the same university. By clicking one of these posts, the pages will show the details in it and jump to the corresponding position.
-![](media/dashboard.png)
+    The main page of dashboard would be serveral posts from users who comes from the same university. By clicking one of these posts, the pages will show the details in corresponding post.
+    ![](media/dashboard.png)
 
 
 4. Profile
@@ -64,5 +64,16 @@ The main page of dashboard would be serveral posts from users who comes from the
 
     ![](media/profile2.png)
 
-5. My Teams
-6. My Posts
+5. My Teams and My Posts
+    Both of them would show a list of posts just like dashboard. "My Teams" would show the posts which the user joined, but "My Posts" would show the posts which the user created.
+
+6. Detail of a post
+    when the user click one post in the list, the detail would be show in a new interface. The info includes overview, grading policy, requirement, current teammate and comments.
+    User can also leave comments, add to wish list, and request to join the team in this page.
+    ![](media/postdetail1.png)
+    ![](media/postdetail2.png)
+
+7. Wish List
+    The wish list would show a list of posts with a button to send request.
+    ![](media/wishlist.png)
+
