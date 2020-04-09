@@ -54,7 +54,8 @@ The main page of dashboard would be serveral posts from users who comes from the
 
 3. Dashboard:
 The main page of dashboard would be serveral posts from users who comes from the same university. By clicking one of these posts, the pages will show the details in it and jump to the corresponding position.
-![](media/dashboard.png)
+![](media/dashboard1.png)
+![](media/dashboard2.png)
 
 
 4. Profile
