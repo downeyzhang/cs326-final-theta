@@ -77,3 +77,10 @@ The main page of dashboard would be serveral posts from users who comes from the
     The wish list would show a list of posts with a button to send request.
     ![](media/wishlist.png)
 
+
+#### Addition
+|Names|Division of Labor|
+|  ----  | ----  |
+|Jiawei Qi|Documentation and structure|
+|Jiaming Yuan|Web page design and coding|
+|Donglin Zhang|Web page design and documentation fix|
