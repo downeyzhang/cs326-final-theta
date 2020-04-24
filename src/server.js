@@ -3,6 +3,8 @@ var bodyParser = require("body-parser");
 var User = require("./models/user");
 var swig = require("swig");
 
+var port = process.env.PORT || 3000;
+
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -59,4 +61,4 @@ app.post("/login",function(req,res){
 });
 
 
-app.listen(3000);
+app.listen(port);
