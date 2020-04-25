@@ -38,7 +38,6 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
 
 | Resource    | Request verb | Description                                                | status code             |
 | ----------- | ------------ | ---------------------------------------------------------- | ----------------------- |
-| /login      | POST         | Verify the email and password| 200 OK/400 Error
 | /user?basic | PUT          | Update his personal information: name. birthday,major,etc. | 200 ok                  |
 | /post       | POST         | create new post                                            | 200 ok                  |
 | /post?<id>  | GET          | check his post history also the teams he joined            | 200 ok/ 400 "not exist" |
@@ -103,5 +102,3 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
    | 503         | Service Unavailable - The server is currently unable to handle the request due to a temporary condition which will be alleviated after some delay. You can choose to resend the request again. |
 
    
-**Heroku url:**
-https://afternoon-savannah-61268.herokuapp.com/
