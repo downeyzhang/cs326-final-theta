@@ -103,5 +103,17 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
    | 503         | Service Unavailable - The server is currently unable to handle the request due to a temporary condition which will be alleviated after some delay. You can choose to resend the request again. |
 
    
+
 **Heroku url:**
 https://afternoon-savannah-61268.herokuapp.com/
+
+
+
+**Group work**
+
+| Names         | Division of Labor                                            |
+| :------------ | ------------------------------------------------------------ |
+| Donglin Zhang | Build server, implement "login" function, deploy on Heroku   |
+| Jiaming Yuan  | Build server, server connection by local MongoDB, implement "register account " function |
+| Jiawei Qi     | Implement API documentation, Implement Resting API(wishlist,post, and comment ) function |
+
