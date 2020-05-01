@@ -1,3 +1,9 @@
+# Final Project Milestone 2
+### Team name: Team Theta
+### Application name: Teammaker
+
+
+#### Representation of APIs
 **Requests:**
 
 Our Web API is based on **REST** principles. Data resources are accessed via standard HTTPS requests in UTF-8 format to an API endpoint. 
@@ -15,10 +21,10 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
 
 1. Users can create account with an email address, and he has to select one university in the process to match the corresponding posts.
 
-   | Resource   | Request verb | Description                                                  | status code                                            |
-   | ---------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------ |
-   | /user      | POST         | Creates an account for a user(email required and university required),parameter is the email of user | 200:OK                                                 |
-   | /user?<id> | PUT          | Verifies user's email address                                | 200:ok/400:"email not exist" or "email already exists" |
+   | Resource     | Request verb | Description                                                  | status code                                            |
+   | ------------ | ------------ | ------------------------------------------------------------ | ------------------------------------------------------ |
+   | /create      | POST         | Creates an account for a user(email required and university required),parameter is the email of user | 200:OK         |                                   |
+   | /create?<id> | PUT          | Verifies user's email address                                | 200:ok/400:"email not exist" or "email already exists" |
    | /user?<id> | POST         | sends verification email to the user                         | 200:ok/400:"could not find","already have verified"    |
    | /user      | POST         | sends the password reset link via email                      | 200:ok /400 "could not find"                           |
 
@@ -59,7 +65,7 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
 | /post?<id> | DELETE       | Delete any components above                                  | 204:ok,404:" does not exist": |
 | /post?<id> | PUT          | Any changes in information                                   | 200:ok                        |
 
-4.In dashboard, users will see a list of posts that posted by other users, and they may also search for posts they looking for by typing post name, teammates name, or post ID via search bar. When users click on one post, a window will appear the detail of this post which contains all details about this post, and there would be a field to leave comments, and a button for requesting into this team.
+4. In dashboard, users will see a list of posts that posted by other users, and they may also search for posts they looking for by typing post name, teammates name, or post ID via search bar. When users click on one post, a window will appear the detail of this post which contains all details about this post, and there would be a field to leave comments, and a button for requesting into this team.
 
 - The request to join would notify team leader who created the post. Team leader can approve or reject the request in the notification.
 - Users may leave comments under each post. Also, the comments will notify to all teammates in this post. When the teammate clicks the notification, the browser will jump to this post and he can reply to it.
@@ -103,13 +109,15 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
    | 503         | Service Unavailable - The server is currently unable to handle the request due to a temporary condition which will be alleviated after some delay. You can choose to resend the request again. |
 
    
+#### Client interface
 
-**Heroku url:**
+
+
+#### Heroku url
 https://afternoon-savannah-61268.herokuapp.com/
 
 
-
-**Group work**
+#### Breakdown of the division of labor
 
 | Names         | Division of Labor                                            |
 | :------------ | ------------------------------------------------------------ |
