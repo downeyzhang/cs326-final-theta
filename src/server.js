@@ -2,8 +2,10 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var User = require("./models/user");
 var swig = require("swig");
+var mongoose =require("mongoose");
 
-var port = process.env.PORT || 3000;
+//var port = process.env.PORT || 3000;
+var port = 3000;
 
 var app = express();
 
@@ -27,7 +29,7 @@ app.post("/create", function(req, res) {
             email: req.body.email,
             password: req.body.password
         });
-    
+        
         user.save(function(err, stu) {
             if (err) {
                 res.status(400).send(err);
@@ -42,21 +44,26 @@ app.post("/create", function(req, res) {
     }
 });
 
-app.post("/login",function(req,res){
+app.post("/login",async function(req,res){
     
     // TODO: verify the email address and password connecting to database
     var email = req.body.email;
     var password = req.body.password;
-
-    if(password == '123' || password == 'abc'){
-         //var result = {'code':'200', 'result':'success','username':'name from server'}
-         //res.json(result);
-        res.render('index');
-    }
-    else { 
-         //var result = {'code':'400', 'result':'error',};
-         //res.json(result);
-        res.render('login');
+    
+    try{
+        const user = await User.findOne({'email':email});
+        //var json = JSON.stringify(user);
+        if(user){
+            if(user.password == password){
+                res.render('index');
+            }else{
+                res.render('login');
+            }
+        }else{
+            res.render('login');
+        }  
+    }catch(err){
+        res.json({message:err});
     }
 });
 
