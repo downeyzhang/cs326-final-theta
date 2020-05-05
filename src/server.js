@@ -20,9 +20,10 @@ swig.setDefaults({cache: false});
 
 
 app.post("/create", function(req, res) {
-
+    var validater = req.body.validater;
+    
     // Create a student from the submitted form data
-    if (req.body.password === req.body.password_repeat){
+    if (validater === "true"){
         var user = new User({
             lastName: req.body.last_name,
             firstName: req.body.first_name,
@@ -34,13 +35,9 @@ app.post("/create", function(req, res) {
             if (err) {
                 res.status(400).send(err);
             } else {
-                res.send("saved");
-                // res.redirect('/login.html');
-                // res.send("saved");
+                res.render("login");
             }
         });
-    } else {
-        res.send("password should be same");
     }
 });
 
@@ -52,15 +49,15 @@ app.post("/login",async function(req,res){
     
     try{
         const user = await User.findOne({'email':email});
+        console.log(user);
         //var json = JSON.stringify(user);
         if(user){
-            if(user.password == password){
+            if (user.password == password) {
                 res.render('index');
-            }else{
-                res.render('login');
             }
-        }else{
-            res.render('login');
+        } else {
+            res.render('login', { errormessage: 'Incorrect Username or Password!'});
+            // res.render('login');
         }  
     }catch(err){
         res.json({message:err});
