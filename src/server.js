@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var User = require("./models/user");
 var swig = require("swig");
 var mongoose =require("mongoose");
+var cookieParser = require("cookie-parser");
 
 var port = process.env.PORT || 3000;
 //var port = 3000;
@@ -17,6 +18,16 @@ app.set('views', './public');
 app.set('view engine', 'html');
 swig.setDefaults({cache: false});
 
+app.use(cookieParser('private'));
+
+// app.use(function(req,res,next){
+//     if(req.cookies['login']){
+//         res.locals.login = req.cookies.login.email;
+//     }else{
+//         res.render('login');
+//     }
+//     next();
+// });
 
 
 app.post("/create", function(req, res) {
@@ -46,17 +57,24 @@ app.post("/login",async function(req,res){
     // TODO: verify the email address and password connecting to database
     var email = req.body.email;
     var password = req.body.password;
-    
     try{
         const user = await User.findOne({'email':email});
         console.log(user);
+        
         //var json = JSON.stringify(user);
         if(user){
             if (user.password == password) {
-                res.render('index');
+                // one hour cookie
+                res.cookie('login',{email:email},{maxAge:1000*60*60});
+
+                var lastName = user.lastName;
+                var firstName = user.firstName;
+                res.render('index',{username:firstName+" "+lastName});
+            }else{
+                res.render('login');
             }
         } else {
-            res.render('login', { errormessage: 'Incorrect Username or Password!'});
+            res.render('login', { errormessage: 'Account does not exists'});
             // res.render('login');
         }  
     }catch(err){
@@ -64,6 +82,62 @@ app.post("/login",async function(req,res){
     }
 });
 
+app.get("/dashboard",async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        try{
+            const user = await User.findOne({'email':email});
+            console.log(user);
+            
+            //var json = JSON.stringify(user);
+            if(user){
+                
+                var lastName = user.lastName;
+                var firstName = user.firstName;
+                res.render('index',{username:firstName+" "+lastName});
+            } else {
+                // error
+            }  
+        }catch(err){
+            res.json({message:err});
+        }
+    }else{
+        res.render('login');
+    }
+});
+
+app.get("/profile",async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        try{
+            const user = await User.findOne({'email':email});
+            console.log(user);
+            
+            //var json = JSON.stringify(user);
+            if(user){
+                
+                var lastName = user.lastName;
+                var firstName = user.firstName;
+                res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email});
+            } else {
+                // error
+            }  
+        }catch(err){
+            res.json({message:err});
+        }
+    }else{
+        res.render('login');
+    }
+})
+
+
+
+app.post("/logout",function(req,res){
+    res.clearCookie('login');
+    res.render('login');
+})
 
 
 //
