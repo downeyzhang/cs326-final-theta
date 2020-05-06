@@ -5,7 +5,7 @@ var post = db.model("post", {
     info:       String, //course infomation
     score:      String, //grading policy
     require:    String, //requirement
-    teammates:  Array,  //current teammate, teamates's email
+    teammates:  Array,  //current teammate, teamate's email
 });
 
 module.exports = post;
