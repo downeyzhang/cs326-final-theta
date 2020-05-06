@@ -177,7 +177,7 @@ app.post("/updateBasic",async function(req,res){
 });
 
 
-// update first name and last name
+// update address
 app.post("/updateAddress",async function(req,res){
     if(req.cookies['login']){
         res.locals.login = req.cookies.login.email;
