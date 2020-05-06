@@ -39,7 +39,10 @@ app.post("/create", function(req, res) {
             lastName: req.body.last_name,
             firstName: req.body.first_name,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            address: "",
+            city: "",
+            country: ""
         });
         
         user.save(function(err, stu) {
@@ -120,7 +123,11 @@ app.get("/profile",async function(req,res){
                 
                 var lastName = user.lastName;
                 var firstName = user.firstName;
-                res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email});
+                var address = user.address;
+                var city = user.city;
+                var country = user.country;
+                res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email,
+                    address:address, city: city, country: country});
             } else {
                 // error
             }  
@@ -132,6 +139,80 @@ app.get("/profile",async function(req,res){
     }
 })
 
+// update first name and last name
+app.post("/updateBasic",async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        try{
+            const user = await User.findOne({'email':email});
+            console.log(user);
+            
+            //var json = JSON.stringify(user);
+            if(user){
+                await User.updateOne({email:email},{$set:{firstName:req.body.first_name,lastName:req.body.last_name}});
+                // update the page again
+                const user = await User.findOne({'email':email});
+                console.log(user);
+                if(user){
+                    var lastName = user.lastName;
+                    var firstName = user.firstName;
+                    var address = user.address;
+                    var city = user.city;
+                    var country = user.country;
+                    res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email,
+                        address:address, city: city, country: country});
+                } else {
+                    // error
+                }  
+            } else {
+                // error
+            }  
+        }catch(err){
+            res.json({message:err});
+        }
+    }else{
+        res.render('login');
+    }
+});
+
+
+// update first name and last name
+app.post("/updateAddress",async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        try{
+            const user = await User.findOne({'email':email});
+            console.log(user);
+            
+            //var json = JSON.stringify(user);
+            if(user){
+                await User.updateOne({email:email},{$set:{address:req.body.address,city:req.body.city,country:req.body.country}});
+                // update the page again
+                const user = await User.findOne({'email':email});
+                console.log(user);
+                if(user){
+                    var lastName = user.lastName;
+                    var firstName = user.firstName;
+                    var address = user.address;
+                    var city = user.city;
+                    var country = user.country;
+                    res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email,
+                        address:address, city: city, country: country});
+                } else {
+                    // error
+                }  
+            } else {
+                // error
+            }  
+        }catch(err){
+            res.json({message:err});
+        }
+    }else{
+        res.render('login');
+    }
+});
 
 
 app.post("/logout",function(req,res){
