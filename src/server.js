@@ -95,7 +95,7 @@ app.get("/dashboard",async function(req,res){
                 
                 var lastName = user.lastName;
                 var firstName = user.firstName;
-                res.render('index',{username:firstName+" "+lastName});
+                res.render('index',{username:firstName+"_"+lastName});
             } else {
                 // error
             }  

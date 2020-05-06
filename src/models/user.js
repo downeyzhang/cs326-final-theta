@@ -5,7 +5,11 @@ var user = db.model("user", {
     lastName:   String,
     email:      String,
     password:   String,
-    wish:Array  //愿望文章  文章id
+    wish:       Array, //wish list, post id
+    address:    String,
+    city:       String,
+    country:    String
+
 });
 
 module.exports = user;

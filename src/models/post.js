@@ -1,10 +1,11 @@
 var db = require("../db");
 
 var post = db.model("post", {
-    info:  String,  //课程信息
-    score:   String, //评分政策
-    require:      String, //对队友的要求
-    teammates:   String,  //目前的队友
+    pid:        String,
+    info:       String, //course infomation
+    score:      String, //grading policy
+    require:    String, //requirement
+    teammates:  Array,  //current teammate, teamates's email
 });
 
 module.exports = post;
