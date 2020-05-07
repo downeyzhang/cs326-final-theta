@@ -1,7 +1,11 @@
 'use strict';
 
+var express = require('express');
+var router = express.Router();
 const postService = require('../services/post-service');
 const userService = require('../services/user-service');
+
+
 
 /**
  * 查
@@ -9,14 +13,14 @@ const userService = require('../services/user-service');
  * @param request
  * @param response
 */
-exports.list = (request, response) => {
-    const email = request.email;
-    const totalQuery = request.query.total;
-    const params = {email};
-    if(totalQuery) {
-        params.total = totalQuery
-    };
-    const promise = postService.search(params);
+exports.list= async (request, response) => {
+    // const email = request.email;
+    // const totalQuery = request.query.total;
+    // const params = {email};
+    // if(totalQuery) {
+    //     params.total = totalQuery
+    // };
+    const promise = postService.search({});
     const result = (tasks) => {
         response.status(200);
         response.json(tasks);
@@ -217,3 +221,5 @@ let renderErrorResponse = (response) => {
     };
     return errorCallback;
 };
+
+

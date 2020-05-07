@@ -1,7 +1,7 @@
 'use strict';
-const mongoose = require('mongoose'),
-Post = mongoose.model('post');
-User = mongoose.model('user');
+const mongoose = require('mongoose');
+const Post = mongoose.model('post');
+const User = mongoose.model('user');
 
 /**
  * Returns a promise for search results.
