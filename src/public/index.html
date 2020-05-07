@@ -7,11 +7,8 @@
     <title>Dashboard - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/Basic.css">
-    <link rel="stylesheet" href="assets/css/icon.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="page-top">
@@ -19,21 +16,20 @@
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon"><img src="assets/img/icon.png" style="width: 60px;height: 60px;"></div>
+                    <div class="sidebar-brand-icon"><img src="assets/img/Icon.png" style="width: 60px;height: 60px;"></div>
                     <div class="sidebar-brand-text mx-3"><span style="font-family: Nunito, sans-serif;">Teammaker</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
-                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0 bg-white text-primary shadow-lg rounded-lg" href="#" style="padding: 5px 5px;height: 50px;">
+                <a class="navbar-brand d-flex justify-content-center align-items-center nav-item sidebar-brand bg-white shadow-lg rounded-lg" href="#create.html" style="padding: 5px 5px;height: 50px;">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-plus" style="color: #ff8d27;"></i></div>
                     <div class="sidebar-brand-text mx-3"><span style="color: #373636;font-family: Nunito, sans-serif;">Create your Post</span></div>
                 </a>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                    <form id="dashboardForm" method="get" action="/dashboard"></form>
-                    <form id="profileForm" method="get" action="/profile"></form>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" onclick="document.getElementById('dashboardForm').submit();"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" onclick="document.getElementById('profileForm').submit();"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="table.html"><i class="fas fa-heart"></i><span>Liked</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span>My Posts</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="wishList.html"><i class="fas fa-heart"></i><span>Wish List</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="Post.html"><i class="far fa-envelope"></i><span>My Posts</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="project.html"><i class="fas fa-box-open"></i><span>My Team &amp; Project</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -43,8 +39,8 @@
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                <div class="input-group-append"><button class="btn py-0" type="button" style="background-color: #373636;"><i class="fas fa-search"></i></button></div>
+                            <div class="input-group" style="width: 50vw;"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                <div class="input-group-append"><button class="btn py-0" type="button"><i class="fas fa-search"></i></button></div>
                             </div>
                         </form>
                         <ul class="nav navbar-nav flex-nowrap ml-auto">
@@ -57,108 +53,31 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown no-arrow mx-1" role="presentation">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="badge badge-danger badge-counter" style="background-color: #ff8d27;">3+</span><i class="fas fa-bell fa-fw"></i></a>
+                            <li class="nav-item dropdown no-arrow" role="presentation">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">User</span><img class="border rounded-circle img-profile" src=""></a>
                                     <div
-                                        class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in" role="menu">
-                                        <h6 class="dropdown-header">alerts center</h6>
-                                        <a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a>
-                                        <a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a>
-                                        <a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 2, 2019</span>
-                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                                            </div>
-                                        </a><a class="text-center dropdown-item small text-gray-500" href="#">Show All Alerts</a></div>
+                                        class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+                                        <a
+                                            class="dropdown-item" role="presentation" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                            <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
                     </div>
                     </li>
-                    <li class="nav-item dropdown no-arrow mx-1" role="presentation">
-                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-envelope fa-fw"></i><span class="badge badge-danger badge-counter" style="background-color: #ff8d27;">7</span></a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in"
-                                role="menu">
-                                <h6 class="dropdown-header">alerts center</h6>
-                                <a class="d-flex align-items-center dropdown-item" href="#">
-                                    <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
-                                        <div class="bg-success status-indicator"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                        <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                    </div>
-                                </a>
-                                <a class="d-flex align-items-center dropdown-item" href="#">
-                                    <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar2.jpeg">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
-                                        <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
-                                    </div>
-                                </a>
-                                <a class="d-flex align-items-center dropdown-item" href="#">
-                                    <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar3.jpeg">
-                                        <div class="bg-warning status-indicator"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
-                                        <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
-                                    </div>
-                                </a>
-                                <a class="d-flex align-items-center dropdown-item" href="#">
-                                    <div class="dropdown-list-image mr-3"><img class="rounded-circle" src="assets/img/avatars/avatar5.jpeg">
-                                        <div class="bg-success status-indicator"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
-                                        <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
-                                    </div>
-                                </a><a class="text-center dropdown-item small text-gray-500" href="#">Show All Alerts</a></div>
-                        </div>
-                        <div class="shadow dropdown-list dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown"></div>
-                    </li>
-                    <div class="d-none d-sm-block topbar-divider"></div>
-                    <li class="nav-item dropdown no-arrow" role="presentation">
-                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" ><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{username}}</span><img class="border rounded-circle img-profile" src="assets/img/Screen%20Shot%202020-04-08%20at%204.16.33%20AM.png" style="width: 40px;height: 40px;"></a>
-                            <div
-                                class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" href="#" onclick="document.getElementById('profileForm').submit();"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
-                                <a
-                                    class="dropdown-item" role="presentation" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                    <form id="logoutButton" method="POST" action="/logout"></form>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#" onclick="document.getElementById('logoutButton').submit();"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
-                                    
+                    </ul>
             </div>
-            </li>
-            </ul>
-        </div>
-        </nav>
-        <div class="container-fluid">
-            <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-sm d-none d-sm-inline-block" role="button" href="#" style="background-color: #373636;color: rgb(255,255,255);"><i class="fas fa-redo fa-sm text-white-50"></i>&nbsp;Reflesh</a></div>
+            </nav>
+            <div class="container-fluid">
+                <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                    <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-undo fa-sm text-white-50"></i>&nbsp;Refresh</a></div>
+            </div>
             <div class="row">
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-primary py-2">
+                <div class="col">
+                    <div class="card shadow border-left-primary post">
                         <div class="card-body">
                             <div class="row align-items-center no-gutters">
                                 <div class="col mr-2">
-                                    <a data-toggle="modal" href="#myModal">
-                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>CS 326&nbsp;</span></div>
-                                        <div class="text-dark font-weight-bold h5 mb-0"><span>Web Programming</span></div>
+                                    <a data-toggle="modal" href="#postModal">
+                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>Classid</span></div>
+                                        <div class="text-dark font-weight-bold h5 mb-0"><span>Class Name</span></div>
                                     </a>
                                 </div>
                             </div>
@@ -166,95 +85,30 @@
                                 <div class="col">
                                     <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
                                 </div>
-                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Qi jiawei</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.29.43%20AM.png"></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-success py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <a href="#">
-                                        <div class="text-success font-weight-bold text-xs mb-1 text-uppercase"><span style="font-size: 15pt;">Cs 187</span>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>Introduction to Data Structure</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
-                                </div>
-                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Donglin Zhang</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.56.55%20AM.png"></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-info py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span style="font-size: 15pt;">CS 589</span></div>
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>Machine Learning</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
-                                </div>
-                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Qi jiawei</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.29.43%20AM.png"></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-warning py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <div class="text-warning font-weight-bold text-xs mb-1 text-uppercase"><span style="font-size: 15pt;">Cs 311</span></div>
-                                    <div class="text-uppercase text-info font-weight-bold text-xs mb-1"></div>
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>Introduction to Algorithm</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
-                                </div>
-                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Donglin Zhang</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.56.55%20AM.png"></a></div>
+                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">User</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer class="bg-white sticky-footer">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"><span>Copyright © Brand 2020</span></div>
+            </div>
+        </footer>
     </div>
-    <div class="modal fade modal-dialog modal-xl" role="dialog" tabindex="-1" id="myModal">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" role="dialog" tabindex="-1" id="postModal">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">CS 326</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <h4 class="modal-title">ClassId</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="row" id="first-row">
                         <div class="col-lg-7 col-xl-8">
                             <div class="card shadow mb-4">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h6 class="text-primary font-weight-bold m-0">CS 326 Class Overview</h6>
+                                    <h6 class="text-primary font-weight-bold m-0">Class infomation</h6>
                                     <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                                         <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
                                             role="menu">
@@ -263,10 +117,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p>This course satisfies the Integrative Experience (IE) requirement. The upper-division integrative experience provides a structured context for students to reflect on their own learning and explore the connections between
-                                        the broad exposure provided by General Education and the more focused exposure of their major. You can read additional details on the integrative experience website. The IE requirement is fulfilled by this course
-                                        through the application of extensive team-based learning. Furthermore, this course embraces the IE through a substantial team project that is entirely student driven and explicitly integrates the material covered
-                                        in this course with the experiences, learning, and knowledge attained by every unique person enrolled in this course.<br></p>
+                                    <p><br></p>
                                 </div>
                             </div>
                         </div>
@@ -284,58 +135,47 @@
                                 <div class="card-body">
                                     <div class="chart-area"><canvas data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas></div>
                                     <div
-                                        class="text-center small mt-4"><span class="mr-2"><i class="fas fa-circle text-primary"></i>&nbsp;Projects</span><span class="mr-2"><i class="fas fa-circle text-success"></i>&nbsp;Final</span><span class="mr-2"><i class="fas fa-circle text-info"></i>&nbsp;Midterm</span></div>
+                                        class="text-center small mt-4"><span class="mr-2"><i class="fas fa-circle text-primary"></i>&nbsp;&nbsp;Item1</span><span class="mr-2"><i class="fas fa-circle text-success"></i>&nbsp;&nbsp;Item2</span><span class="mr-2"><i class="fas fa-circle text-info"></i>&nbsp; Item3</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
+                <div class="row" id="second-row">
+                    <div class="col-lg-5 col-xl-6">
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="text-primary font-weight-bold m-0">We are looking for...</h6>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h6 class="text-primary font-weight-bold m-0"><strong>We are looking for...</strong></h6>
+                                <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                    <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
+                                        role="menu">
+                                        <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" role="presentation" href="#">&nbsp;Action</a><a class="dropdown-item" role="presentation" href="#">&nbsp;Another action</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#">&nbsp;Something else here</a></div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item"><span>Hardworking classmates</span></li>
-                                    <li class="list-group-item"><span>Proficient in Java, Java Script, Mongo DB, Bootstrap, ...</span></li>
-                                    <li class="list-group-item"><span>Living on-campus (so that we can meet regularly in dorm)</span></li>
-                                </ul>
-                            </div>
+                            <div class="card-body"></div>
                         </div>
                     </div>
-                    <div class="col col-lg-6 mb-4">
+                    <div class="col-lg-5 col-xl-6">
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="text-primary font-weight-bold m-0">Current teammates</h6>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h6 class="text-primary font-weight-bold m-0">Teammates</h6>
+                                <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                    <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
+                                        role="menu">
+                                        <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" role="presentation" href="#">&nbsp;Action</a><a class="dropdown-item" role="presentation" href="#">&nbsp;Another action</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation" href="#">&nbsp;Something else here</a></div>
+                                </div>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col mr-2">
-                                            <h1 style="font-size: 20px;">Database:</h1>
-                                        </div>
-                                        <div class="col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Qi jiawei</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.29.43%20AM.png"></a></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col mr-2">
-                                            <h1 style="font-size: 20px;">Frontend:</h1>
-                                        </div>
-                                        <div class="col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Donglin Zhang</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.56.55%20AM.png"></a></div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col mr-2">
-                                            <h1 style="font-size: 20px;">Backend:</h1>
-                                        </div>
-                                        <div class="col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Jiaming Yuan</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.16.33%20AM.png"></a></div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="list-group list-group-flush"></ul>
+                            <div class="card-body"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="comments">
+                    <div class="col">
+                        <div class="row"></div>
+                        <div class="row">
+                            <div class="col">
+                                <form id="commentForm"><label>Comment:</label><textarea class="form-control" id="commentInput"></textarea></form><button class="btn btn-primary" type="button" style="margin: 5px 0px;">Publish</button></div>
                         </div>
                     </div>
                 </div>
@@ -345,16 +185,10 @@
                     <div class="col">
                         <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
                     </div>
-                    <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Qi jiawei</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="assets/img/Screen%20Shot%202020-04-08%20at%204.29.43%20AM.png"></a></div>
+                    <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">User</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
                 </div><button class="btn btn-light" type="button" data-dismiss="modal">Like</button><button class="btn btn-primary" type="button">Join!</button></div>
         </div>
     </div>
-    </div>
-    <footer class="bg-white sticky-footer">
-        <div class="container my-auto">
-            <div class="text-center my-auto copyright"><span>Copyright © Brand 2020</span></div>
-        </div>
-    </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

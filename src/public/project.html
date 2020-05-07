@@ -7,8 +7,6 @@
     <title>Register - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -19,28 +17,28 @@
             <div class="card-body p-0">
                 <div class="row">
                     <div class="col-lg-5 d-none d-lg-flex">
-                        <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;assets/img/Register.png&quot;);"></div>
+                        <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;assets/img/Logo/image2.jpeg&quot;);"></div>
                     </div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Create an Account!</h4>
                             </div>
-                            <form name="register" class="user" method="post" action="/create">
+                            <form class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="first_name"></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleLastName" placeholder="Last Name" name="last_name"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Last Name" name="last_name"></div>
                                 </div>
                                 <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" name="email"></div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="password"></div>
                                     <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat"></div>
-                                </div><button class="btn btn-block text-white btn-user" type="submit" onclick="validateForm()" style="background-color: #ff8d27;">Register Account</button>
+                                </div><button class="btn btn-primary btn-block text-white btn-user" type="submit">Register Account</button>
+                                <hr><a class="btn btn-primary btn-block text-white btn-google btn-user" role="button"><i class="fab fa-google"></i>&nbsp; Register with Google</a><a class="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i class="fab fa-facebook-f"></i>&nbsp; Register with Facebook</a>
                                 <hr>
-                                <input class="form-control form-control-user" type="text" id="validater" name="validater" value="false" hidden>
                             </form>
-                            <!-- <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div> -->
-                            <div class="text-center"><a class="small" href="login.html">Already have an account? Login!</a></div>
+                            <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
+                            <div class="text-center"><a class="small" href="Post.html">Already have an account? Login!</a></div>
                         </div>
                     </div>
                 </div>
@@ -53,32 +51,6 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script>
-        function validateForm() {
-            var first = $("#exampleFirstName").val();
-            var last = $("#exampleLastName").val();
-            var email = $("#exampleInputEmail").val();
-            var password = $("#examplePasswordInput").val();
-            var repeatPassword = $("#exampleRepeatPasswordInput").val();
-            if (first.length == 0 || last.length == 0) {
-                alert("Please enter your full name!");
-            } else if (email.length == 0) {
-                alert("Please enter your email!");
-            } else if (password.length < 8 || !hasNumber(password) || !hasWord(password)) {
-                alert("Invalid password!\nA valid password should contain:\n 1. more than 8 characters,\n 2. both numbers and letters.");
-            } else if (password != repeatPassword) {
-                alert("Password and repeat password should be same!");
-            } else {
-                $("#validater").val("true");
-            }
-        }
-        function hasNumber(myString) {
-            return /\d/.test(myString);
-        }
-        function hasWord(myString) {
-            return /\w/.test(myString);
-        }
-        </script>
 </body>
 
 </html>
