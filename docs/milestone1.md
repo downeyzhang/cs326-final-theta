@@ -1,5 +1,5 @@
 
-# Final Project for COMPSCI 326
+# Final Project Milestone 1
 ### Team name: Team Theta
 ### Application name: Teammaker
 #### Team Overview
@@ -78,7 +78,7 @@ The main page of dashboard would be serveral posts from users who comes from the
     ![](media/wishlist.png)
 
 
-#### Addition
+#### Breakdown of the division of labor
 |Names|Division of Labor|
 |  ----  | ----  |
 |Jiawei Qi|Documentation and structure|
