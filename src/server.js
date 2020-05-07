@@ -7,12 +7,9 @@ var Project = require("./models/project");
 var swig = require("swig");
 var mongoose =require("mongoose");
 var cookieParser = require("cookie-parser");
-<<<<<<< HEAD
 
 
 // var controllers = require('./controllers/post-controller');
-=======
->>>>>>> 9fa5b8be6032d61f5321644be63ba0e40883f67b
 
 var port = process.env.PORT || 3000;
 //var port = 3000;
@@ -119,10 +116,6 @@ app.get("/dashboard",async function(req,res){
         res.render('login');
     }
 });
-<<<<<<< HEAD
-
-app.get("/profile",async function(req,res){
-=======
 
 app.get("/profile",async function(req,res){
     if(req.cookies['login']){
@@ -155,7 +148,6 @@ app.get("/profile",async function(req,res){
 
 // update first name and last name
 app.post("/updateBasic",async function(req,res){
->>>>>>> 9fa5b8be6032d61f5321644be63ba0e40883f67b
     if(req.cookies['login']){
         res.locals.login = req.cookies.login.email;
         var email = req.cookies.login.email;
@@ -165,67 +157,7 @@ app.post("/updateBasic",async function(req,res){
             
             //var json = JSON.stringify(user);
             if(user){
-<<<<<<< HEAD
-                
-                var lastName = user.lastName;
-                var firstName = user.firstName;
-                var address = user.address;
-                var city = user.city;
-                var country = user.country;
-                res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email,
-                    address:address, city: city, country: country});
-=======
                 await User.updateOne({email:email},{$set:{firstName:req.body.first_name,lastName:req.body.last_name}});
-                // update the page again
-                const user = await User.findOne({'email':email});
-                console.log(user);
-                if(user){
-                    var lastName = user.lastName;
-                    var firstName = user.firstName;
-                    var address = user.address;
-                    var city = user.city;
-                    var country = user.country;
-                    res.render('profile',{username:firstName+"_"+lastName, firstName:firstName, lastName:lastName, email:email,
-                        address:address, city: city, country: country});
-                } else {
-                    // error
-                }  
->>>>>>> 9fa5b8be6032d61f5321644be63ba0e40883f67b
-            } else {
-                // error
-            }  
-        }catch(err){
-            res.json({message:err});
-        }
-    }else{
-        res.render('login');
-    }
-<<<<<<< HEAD
-})
-
-// update first name and last name
-app.post("/updateBasic",async function(req,res){
-=======
-});
-
-
-// update address
-app.post("/updateAddress",async function(req,res){
->>>>>>> 9fa5b8be6032d61f5321644be63ba0e40883f67b
-    if(req.cookies['login']){
-        res.locals.login = req.cookies.login.email;
-        var email = req.cookies.login.email;
-        try{
-            const user = await User.findOne({'email':email});
-            console.log(user);
-            
-            //var json = JSON.stringify(user);
-            if(user){
-<<<<<<< HEAD
-                await User.updateOne({email:email},{$set:{firstName:req.body.first_name,lastName:req.body.last_name}});
-=======
-                await User.updateOne({email:email},{$set:{address:req.body.address,city:req.body.city,country:req.body.country}});
->>>>>>> 9fa5b8be6032d61f5321644be63ba0e40883f67b
                 // update the page again
                 const user = await User.findOne({'email':email});
                 console.log(user);
@@ -252,7 +184,6 @@ app.post("/updateAddress",async function(req,res){
 });
 
 
-<<<<<<< HEAD
 // update address
 app.post("/updateAddress",async function(req,res){
     if(req.cookies['login']){
@@ -443,11 +374,6 @@ app.delete('/wish/:email/:postId',async function (req, res) {
         const user = await User.findOne({'email':email});
     }
     res.json({message:true});
-=======
-app.post("/logout",function(req,res){
-    res.clearCookie('login');
-    res.render('login');
->>>>>>> 9fa5b8be6032d61f5321644be63ba0e40883f67b
 })
 
 
