@@ -11,7 +11,7 @@ var cookieParser = require("cookie-parser");
 
 // var controllers = require('./controllers/post-controller');
 
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 //var port = 3000;
 
 var app = express();
@@ -380,3 +380,8 @@ app.delete('/wish/:email/:postId',async function (req, res) {
 
 
 app.listen(port);
+
+
+
+
+//finish
