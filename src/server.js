@@ -222,6 +222,11 @@ app.post("/updateAddress",async function(req,res){
     }
 });
 
+app.post("/logout",function(req,res){
+    res.clearCookie('login');
+    res.render('login');
+})
+
 
 //帖子相关   http://localhost:3000/${name}  =>  http://localhost:3000/post
 //查 
