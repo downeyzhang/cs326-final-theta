@@ -107,7 +107,6 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
 | /wish    | DELETE       | when the user clicks not interested anymore ,it will disappear from wish list and database | 200: ok     |
 
 #### Database Description
-A final up-to-date representation of your database including a brief description of each of the entities in your data model and their relationships if any.
 
 | Entity  | schema       | Description and relationship to other entities               |collection in the database|
 | ------- | ------------ | ------------------------------------------------------------ | ------------------------ |
@@ -126,7 +125,8 @@ https://afternoon-savannah-61268.herokuapp.com/
 
 
 #### Authentication/Authorization
-A final up-to-date description of how users are authenticated and any permissions for specific users (if any) that you used in your application. You should mention how they relate to which UI views are accessible.
+For authentication, each user can only register with one unique email. If email is duplicated, the register page would generate an alert and tell user to use another emall address. The password should be more than 8 characters long. 
+For authorization, We chose to use cookie-parser to ensure each user would have an unique UI views. They can only access to their own UI view, and, if the user has not make any change to the interface for a long time, he (or she) would be automatically logged out.
 
 
 
