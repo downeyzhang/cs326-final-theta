@@ -8,7 +8,7 @@ We plan to develop a website that users can find teammates for their classes. Fo
 
 
 
-#### Team Members![]()
+#### Team Members
 
 |Names|Github usernames|
 |  ----  | ----  |
@@ -21,12 +21,16 @@ We plan to develop a website that users can find teammates for their classes. Fo
 
    - login with their own email address and password
 
-     <img src="C:\Users\win10\Desktop\login.png" alt="login" style="zoom:60%;" />
+     <img src="media/login.png" style="zoom:60%;" />
+     
+     
 
 2. Create an account:
 
-   <img src="C:\Users\win10\Desktop\create cut.png" alt="create" style="zoom:60%;" />
+   <img src="media/create cut.png" style="zoom:60%;" />
 
+   
+   
    
 
 #### APIs
