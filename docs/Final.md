@@ -25,7 +25,7 @@ We plan to develop a website that users can find teammates for their classes. Fo
 
 2. Create an account:
 
-   <img src="C:\Users\win10\Desktop\create.png" alt="create" style="zoom:60%;" />
+   <img src="C:\Users\win10\Desktop\create cut.png" alt="create" style="zoom:60%;" />
 
    
 
