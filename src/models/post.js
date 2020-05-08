@@ -4,6 +4,7 @@ var post = db.model("post", {
     classId:    String, // class id e.g. CS187
     className:  String, 
     info:       String, //course infomation
+    postby:     String,
     score:      {
         type: Map,
         of: String

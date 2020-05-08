@@ -70,7 +70,12 @@ app.post("/login",async function(req,res){
     try{
         const user = await User.findOne({'email':email});
         console.log(user);
-        
+        const posts = await Post.find();
+        var plength = 0;
+        var classNameArray = [];
+        var classIdArray=[];
+        var postNameArray=[];
+        var count = 0;
         //var json = JSON.stringify(user);
         if(user){
             if (user.password == password) {
@@ -79,12 +84,27 @@ app.post("/login",async function(req,res){
 
                 var lastName = user.lastName;
                 var firstName = user.firstName;
-                res.render('index',{username:firstName+"_"+lastName});
+                if(posts){
+                    plength = posts.length;
+                    for (var i = 0; i < 5; i++){
+                        if(plength>i){
+                            count++;
+                            classNameArray.push(posts[i].className);
+                            classIdArray.push(posts[i].classId);
+                            postNameArray.push(posts[i].postby);
+                        }else{
+                            classNameArray.push(" ");
+                            classIdArray.push(" ");
+                            postNameArray.push(" ");
+                        }
+                    }
+                }
+                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray});
             }else{
                 res.render('login');
             }
         } else {
-            res.render('login', { errormessage: 'Account does not exists'});
+            res.render('login', { errormessage: 'Account does not exist'});
             // res.render('login');
         }  
     }catch(err){
@@ -92,10 +112,18 @@ app.post("/login",async function(req,res){
     }
 });
 
-app.get("/dashboard",async function(req,res){
+app.post("/dashboard",async function(req,res){
     if(req.cookies['login']){
+        var page = req.body.page;
+        console.log("page:"+page);
         res.locals.login = req.cookies.login.email;
         var email = req.cookies.login.email;
+        const posts = await Post.find();
+        var plength = 0;
+        var classNameArray = [];
+        var classIdArray=[];
+        var postNameArray=[];
+        var count = 0;
         try{
             const user = await User.findOne({'email':email});
             console.log(user);
@@ -105,7 +133,24 @@ app.get("/dashboard",async function(req,res){
                 
                 var lastName = user.lastName;
                 var firstName = user.firstName;
-                res.render('index',{username:firstName+"_"+lastName});
+
+                if(posts){
+                    plength = posts.length;
+                    for (var i = 0; i < 5; i++){
+                        if(plength>i+5*(page-1)){
+                            count++;
+                            classNameArray.push(posts[i+5*(page-1)].className);
+                            classIdArray.push(posts[i+5*(page-1)].classId);
+                            postNameArray.push(posts[i+5*(page-1)].postby);
+                        }else{
+                            classNameArray.push(" ");
+                            classIdArray.push(" ");
+                            postNameArray.push(" ");
+                        }
+                    }
+                }
+
+                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray});
             } else {
                 // error
             }  

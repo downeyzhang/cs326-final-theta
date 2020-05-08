@@ -25,7 +25,7 @@
                     <div class="sidebar-brand-text mx-3"><span style="color: #373636;font-family: Nunito, sans-serif;">Create your Post</span></div>
                 </a>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                        <form id="indexForm" method = "GET" action="/dashboard"></form>
+                        <form id="indexForm" method = "POST" action="/dashboard"><input id="page_input" value = "1" name="page" /></form>
                         <form id="profileForm" method="GET" action="/profile"></form>
                         <form id="logoutForm" method="POST" action="/logout"></form>
                     <li class="nav-item" role="presentation"><a class="nav-link" onclick="document.getElementById('indexForm').submit();"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
@@ -219,6 +219,9 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+        document.getElementById('page_input').style.display="none";
+    </script>
 </body>
 
 </html>

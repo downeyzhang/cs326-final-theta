@@ -29,7 +29,7 @@
                 
 
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                        <form id="indexForm" method = "GET" action="/dashboard"></form>
+                        <form id="indexForm" method = "POST" action="/dashboard"><input id="page_input" value = "1" name="page" /></form>
                         <form id="profileForm" method="GET" action="/profile"></form>
                         <form id="logoutForm" method="POST" action="/logout"></form>
                     <li class="nav-item" role="presentation"><a class="nav-link active" onclick="document.getElementById('indexForm').submit();"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
@@ -76,15 +76,15 @@
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                     <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-undo fa-sm text-white-50"></i>&nbsp;Refresh</a></div>
             </div>
-            <div class="row">
+            <div class="row" id="card0">
                 <div class="col">
                     <div class="card shadow border-left-primary post">
                         <div class="card-body">
                             <div class="row align-items-center no-gutters">
                                 <div class="col mr-2">
                                     <a data-toggle="modal" href="#postModal">
-                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>Classid</span></div>
-                                        <div class="text-dark font-weight-bold h5 mb-0"><span>Class Name</span></div>
+                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[0]}}</span></div>
+                                        <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[0]}}</span></div>
                                     </a>
                                 </div>
                             </div>
@@ -92,12 +92,105 @@
                                 <div class="col">
                                     <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
                                 </div>
-                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">User</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
+                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{postNameArray[0]}}</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row" id="card1">
+                    <div class="col">
+                        <div class="card shadow border-left-primary post">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col mr-2">
+                                        <a data-toggle="modal" href="#postModal">
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[1]}}</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[1]}}</span></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
+                                    </div>
+                                    <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{postNameArray[1]}}</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="card2">
+                        <div class="col">
+                            <div class="card shadow border-left-primary post">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <a data-toggle="modal" href="#postModal">
+                                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[2]}}</span></div>
+                                                <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[2]}}</span></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
+                                        </div>
+                                        <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{postNameArray[2]}}</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="card3">
+                            <div class="col">
+                                <div class="card shadow border-left-primary post">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <a data-toggle="modal" href="#postModal">
+                                                    <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[3]}}</span></div>
+                                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[3]}}</span></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
+                                            </div>
+                                            <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{postNameArray[3]}}</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="card4">
+                                <div class="col">
+                                    <div class="card shadow border-left-primary post">
+                                        <div class="card-body">
+                                            <div class="row align-items-center no-gutters">
+                                                <div class="col mr-2">
+                                                    <a data-toggle="modal" href="#postModal">
+                                                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[4]}}</span></div>
+                                                        <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[4]}}</span></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div><span style="color: rgb(90,92,105);">Posted by:&nbsp;</span></div>
+                                                </div>
+                                                <div class="col col-auto"><a href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{postNameArray[4]}}</span><img class="border rounded-circle img-profile" style="width: 40px;height: 40px;" src="Screen Shot 2020-04-08 at 4.29.43 AM.png"></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
         </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">
@@ -203,6 +296,15 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+        document.getElementById('page_input').style.display="none";
+        var length = "{{count}}";
+        if(length<=4){document.getElementById('card4').style.display="none"};
+        if(length<=3){document.getElementById('card3').style.display="none"};
+        if(length<=2){document.getElementById('card2').style.display="none"};
+        if(length<=1){document.getElementById('card1').style.display="none"};
+        if(length<=0){document.getElementById('card3').style.display="none"};
+    </script>
 </body>
 
 </html>
