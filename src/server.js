@@ -267,6 +267,25 @@ app.post("/updateAddress",async function(req,res){
     }
 });
 
+app.get("/createYourPost",async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        try{
+            const user = await User.findOne({'email':email});
+            if(user){
+                res.render('create',{username:user.firstName+"_"+user.lastName});
+            }else{
+                // error
+            }
+        }catch(err){
+
+        }
+    }else{
+        res.render('login',{username:username});
+    }
+});
+
 app.post("/logout",function(req,res){
     res.clearCookie('login');
     res.render('login');
@@ -281,14 +300,61 @@ app.get('/post', async function (req, res) {
     res.json({message:promise});
 })
 
-//新增
-app.post('/post',function (req, res) {
+//Create a post
+app.post('/post',async function (req, res) {
     const task = req.body
     // console.log("post请求：")
     // console.log(req.body)
     const newPost = new Post(task);
     console.log(newPost.save());
-    res.json({message:true});
+
+    if(req.cookies['login']){
+        var page = 1;
+        console.log("page:"+page);
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        const posts = await Post.find();
+        var plength = 0;
+        var classNameArray = [];
+        var classIdArray=[];
+        var postNameArray=[];
+        var count = 0;
+        // try{
+            const user = await User.findOne({'email':email});
+            console.log(user);
+            
+            //var json = JSON.stringify(user);
+            if(user){
+                
+                var lastName = user.lastName;
+                var firstName = user.firstName;
+
+                if(posts){
+                    plength = posts.length;
+                    for (var i = 0; i < 5; i++){
+                        if(plength>i+5*(page-1)){
+                            count++;
+                            classNameArray.push(posts[i+5*(page-1)].className);
+                            classIdArray.push(posts[i+5*(page-1)].classId);
+                            postNameArray.push(posts[i+5*(page-1)].postby);
+                        }else{
+                            classNameArray.push(" ");
+                            classIdArray.push(" ");
+                            postNameArray.push(" ");
+                        }
+                    }
+                }
+
+                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray});
+            } else {
+                // error
+            }  
+        // }catch(err){
+        //     res.json({message:err});
+        // }
+    }else{
+        res.render('login');
+    }
 })
 
 //修改

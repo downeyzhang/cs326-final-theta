@@ -16,11 +16,12 @@
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon"><img src="assets/img/Logo.png" style="width: 60px;height: 60px;"></div>
+                    <div class="sidebar-brand-icon"><img src="assets/img/Icon.png" style="width: 60px;height: 60px;"></div>
                     <div class="sidebar-brand-text mx-3"><span style="font-family: Nunito, sans-serif;">Teammaker</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
-                <a class="navbar-brand d-flex justify-content-center align-items-center nav-item sidebar-brand bg-white shadow-lg rounded-lg" href="#create.html" style="padding: 5px 5px;height: 50px;">
+                <form id="createPostForm" method="GET" action="/createYourPost"></form>
+                <a class="navbar-brand d-flex justify-content-center align-items-center nav-item sidebar-brand bg-white shadow-lg rounded-lg" onclick="document.getElementById('createPostForm').submit();" style="padding: 5px 5px;height: 50px;">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-plus" style="color: #ff8d27;"></i></div>
                     <div class="sidebar-brand-text mx-3"><span style="color: #373636;font-family: Nunito, sans-serif;">Create your Post</span></div>
                 </a>
@@ -29,7 +30,7 @@
                         <form id="profileForm" method="GET" action="/profile"></form>
                         <form id="logoutForm" method="POST" action="/logout"></form>
                     <li class="nav-item" role="presentation"><a class="nav-link" onclick="document.getElementById('indexForm').submit();"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" onclick="document.getElementById('profileForm').submit();""><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" onclick="document.getElementById('profileForm').submit();"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="wishList.html"><i class="fas fa-heart"></i><span>Wish List</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="Post.html"><i class="far fa-envelope"></i><span>My Posts</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="project.html"><i class="fas fa-box-open"></i><span>My Team &amp; Project</span></a></li>
@@ -57,7 +58,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown no-arrow" role="presentation">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{username}}</span><img class="border rounded-circle img-profile" src=""></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{username}}</span><!--<img class="border rounded-circle img-profile" src="">--></a>
                                     <div
                                         class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                         <a
