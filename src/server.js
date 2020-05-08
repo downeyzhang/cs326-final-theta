@@ -282,7 +282,7 @@ app.get("/createYourPost",async function(req,res){
 
         }
     }else{
-        res.render('login',{username:username});
+        res.render('login');
     }
 });
 
@@ -357,6 +357,52 @@ app.post('/post',async function (req, res) {
     }
 })
 
+app.post('/search', async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        var searchClass = req.body.searchClass;
+        console.log(searchClass);
+        try{
+            const user = await User.findOne({'email':email});
+            if(user){
+                var lastName = user.lastName;
+                var firstName = user.firstName;
+                var plength = 0;
+                var classNameArray = [];
+                var classIdArray=[];
+                var postNameArray=[];
+                var count = 0;
+                
+                posts = await Post.find({'className':searchClass});
+                console.log(posts);
+                if(posts){
+                    plength = posts.length;
+                    for (var i = 0; i < 5; i++){
+                        if(plength>i){
+                            count++;
+                            classNameArray.push(posts[i].className);
+                            classIdArray.push(posts[i].classId);
+                            postNameArray.push(posts[i].postby);
+                        }else{
+                            classNameArray.push(" ");
+                            classIdArray.push(" ");
+                            postNameArray.push(" ");
+                        }
+                    }
+                    res.render('index',{username:firstName+"_"+lastName,count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray, page:1, total:plength});
+                }
+            }else res.send('error');
+        }catch(err){
+            //error
+        }
+    }else{
+        res.render('login')
+    }
+
+});
+
+
 app.post('/postDetail',async function(req,res){
     if(req.cookies['login']){
         res.locals.login = req.cookies.login.email;
@@ -384,7 +430,7 @@ app.post('/postDetail',async function(req,res){
 
         }
     }else{
-        res.render('login',{username:username});
+        res.render('login');
     }
 });
 
