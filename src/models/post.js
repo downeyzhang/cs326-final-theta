@@ -5,15 +5,9 @@ var post = db.model("post", {
     className:  String, 
     info:       String, //course infomation
     postby:     String,
-    score:      {
-        type: Map,
-        of: String
-    }, //each section and persentage
-    require:    [String],
-    teammates:  {
-        type: Map,
-        of: String
-    },  //current teammate, teamate's id, their position e.g. key: Jiaming Yuan's id, value: Database
+    score:      String,
+    require:    String,
+    teammates:  String,
     comments:   [String]  // id of comments
 });
 
