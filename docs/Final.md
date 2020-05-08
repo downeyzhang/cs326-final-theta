@@ -108,39 +108,12 @@ Our Web API is based on **REST** principles. Data resources are accessed via sta
 
 #### Database Description
 A final up-to-date representation of your database including a brief description of each of the entities in your data model and their relationships if any.
-| Entity  | schema       | Description and relationship to other entities               |
+| Entity  | schema       | Description and relationship to other entities               |collection in the database|
 | ------- | ------------ | ------------------------------------------------------------ |
-| user    |{
-    username:   String,
-    firstName:  String,
-    lastName:   String,
-    email:      String,
-    password:   String,
-    postPublished:[String],
-    postAccepted:[String],
-    wishList:   [String],
-    address:    String,
-    city:       String,
-    country:    String,
-    projects:   [String],
-    comments:   [String]}|The user entity represents users. Username, firstName, lastName, email, password would be stored to database once the user register an account, user can login to their account based on their email and password. postPublished and postAccepted are arrays of objectId of post, represent post the user published and post the user accepted. wishList is also an array of onjectId of post that represents posts that the user interested in. address, city, and country are some general information about the user, these would be stored once user input these information in their profile. Projects are an array of id of project that represents the projects of posts that the user have accepted. Lastly, comments are an array of id of comments that represents all the comments the user published under posts.|
-| post    |{
-    classId:    String,
-    className:  String, 
-    info:       String,
-    postby:     String,
-    score:      String,
-    requirement:String,
-    teammates:  String,
-    comments:   [String]}|| 
-| project |{
-    name:       String,
-    progress:   { type: Number, min: 0, max: 100 }
-    user:       [String]}| when the user clicks not interested anymore ,it will disappear from wish list and database | 
-| comment |{
-    user:       String, //id of user who post it
-    post:       String, //id of post
-    context:    String  }| when the user clicks not interested anymore ,it will disappear from wish list and database | 
+| user    |{username:   String, firstName:  String, lastName:   String, email:      String, password:   String, postPublished:[String], postAccepted:[String], wishList:   [String], address:    String, city:       String, country:    String, projects:   [String], comments:   [String]}|The user entity represents users. Username, firstName, lastName, email, password would be stored to database once the user register an account, user can login to their account based on their email and password. postPublished and postAccepted are arrays of objectId of post, represent post the user published and post the user accepted. wishList is also an array of onjectId of post that represents posts that the user interested in. address, city, and country are some general information about the user, these would be stored once user input these information in their profile. Projects are an array of id of project that represents the projects of posts that the user have accepted. Lastly, comments are an array of id of comments that represents all the comments the user published under posts.|users|
+| post    |{classId:    String, className:  String,  info:       String, postby:     String, score:      String, requirement:String, teammates:  String, comments:   [String]}||posts|
+| project |{name:       String, progress:   { type: Number, min: 0, max: 100 }, user:       [String]}| when the user clicks not interested anymore ,it will disappear from wish list and database |project|
+| comment |{user:       String, post:       String, context:    String  }| when the user clicks not interested anymore ,it will disappear from wish list and database |comment|
 
 
 
