@@ -125,7 +125,7 @@ A final up-to-date description of how users are authenticated and any permission
 |Names           |Division of Labor|
 | -------------- | -------------- |
 |Jiawei Qi       |Documentation and structure, Implement API documentation, Implement Resting API(wish list,post, and comment ) function, Backend Functionality of  post(CREATE, DELETE,GET,PUT), comment(CREATE,DELETE,GET,PUT), and wish list(PUT,DELETE)|
-|Jiaming Yuan    |Web page design and coding, Build server, server connection by local MongoDB, implement "register account " function|
+|Jiaming Yuan    |Designed and implemented general layout of index.html, create.html, profile.html, and post.html using Bootstrap. Wrote several css to unify the general style for elements (like button and card) in each pages. Implemented some fronted js files which ensure basic login and register functions. Built server skeleton, created online mongoDB and built connection between server and database using Mongoose. Implemented post method for "register account" function in server.js. |
 |Donglin Zhang   |Web page design and documentation fix, Build server, implement "login" function, deploy on Heroku|
 
 #### Conclusion
