@@ -127,6 +127,8 @@ https://afternoon-savannah-61268.herokuapp.com/
 
 #### Authentication/Authorization
 A final up-to-date description of how users are authenticated and any permissions for specific users (if any) that you used in your application. You should mention how they relate to which UI views are accessible.
+For authentication, each user can only register with one unique email. If email is duplicated, the register page would generate an alert and tell user to use another emall address. The password should be more than 8 characters long. 
+For authorization, We chose to use cookie-parser to ensure each user would have an unique UI views. They can only access to their own UI view, and, if the user has not make any change to the interface for a long time, he (or she) would be automatically logged out.
 
 
 
