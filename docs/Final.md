@@ -19,19 +19,31 @@ We plan to develop a website that users can find teammates for their classes. Fo
 #### User Interface
 1. Login: simple way to login in.
 
-   - login with their own email address and password
-
+   - Login with their own email address and password
      <img src="media/login.png" style="zoom:60%;" />
-     
      
 
 2. Create an account:
+     - Initial accounts
+     <img src="media/createAccount.png" style="zoom:60%;" />
 
-   <img src="media/create cut.png" style="zoom:60%;" />
 
+3. Dashboard:
+     - To show a list of posts which contains information about projects, click on the item will show the detail of corresponding post.
+     <img src="media/dashboard.png" style="zoom:60%;"/>
+
+4. Detail of Post:
+     - Show more information about a specific post
+     <img src="media/postDetail.png" style="zoom:60%"/>
+
+5. Create Post:
+     - Input the information and post it to dashboard
+     <img src="media/newPost.png" style="zoom:60%;"/>
    
-   
-   
+6. Profile:
+     - show the infomation of user and access to these data.
+     <img src="media/profile.png" style="zoom:60%"/>
+
 
 #### APIs
 **Requests:**
@@ -137,7 +149,7 @@ For authorization, We chose to use cookie-parser to ensure each user would have 
 | -------------- | -------------- |
 |Jiawei Qi       |Documentation and structure, Implement API documentation, Implement Resting API(wish list,post, and comment ) function, Backend Functionality of  post(CREATE, DELETE,GET,PUT), comment(CREATE,DELETE,GET,PUT), and wish list(PUT,DELETE)|
 |Jiaming Yuan    |Designed and implemented general layout of index.html, create.html, profile.html, and post.html using Bootstrap. Wrote several css to unify the general style for elements (like button and card) in each pages. Implemented some fronted js files which ensure basic login and register functions. Built server skeleton, created online MongoDB and built connection between server and database using Mongoose. Designed structure of documents in MongoDB and implemented model schema in src/model folder. Implemented post method for "register account" function in server.js. |
-|Donglin Zhang   |Web page design and documentation fix, Build server, implement "login" function, deploy on Heroku|
+|Donglin Zhang   |Web page design, documentation fix, add request on the web pages, get data from database and render pages from sever. Implement function which stores post infomation, searches posts according to class name, updates profile. Login and logout function use cookie to indetify login status. Deploy on Heroku|
 
 #### Conclusion
 

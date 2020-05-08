@@ -421,7 +421,7 @@ app.post('/postDetail',async function(req,res){
                     var requirement=post.requirement;
                     var teammate = post.teammates;
                     console.log(requirement);
-                    res.render('post',{classId:classId, className:className, info:info,postby:postby,requirement:requirement,teammate:teammate});
+                    res.render('post',{username:user.firstName+"_"+user.lastName, classId:classId, className:className, info:info,postby:postby,requirement:requirement,teammate:teammate});
                 }else res.send('can not find post');
             }else{
                 // error

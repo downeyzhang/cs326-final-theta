@@ -16,6 +16,6 @@
 
 | Names         | Division of Labor                                            |
 | ------------- | ------------------------------------------------------------ |
-| Donglin Zhang |                                                              |
+| Donglin Zhang | Implement login function using data from server. Update the structure of database.|
 | Jiaming Yuan  | Create MongoDB online and connected the server to the MongoDB using Mongoose. Designed the collections in MongoDB and the schema of each entity in src/model. Added some fake data in the MongoDB for testing the functionalities of website. Implement register function in server.js. Fixed some client side bugs.|
 | Jiawei Qi     | Backend Functionality of  post(CREATE, DELETE,GET,PUT), comment(CREATE,DELETE,GET,PUT), and wish list(PUT,DELETE) |

@@ -56,7 +56,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown no-arrow" role="presentation">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">User</span><img class="border rounded-circle img-profile" src=""></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">{{username}}</span><img class="border rounded-circle img-profile" src=""></a>
                                     <div
                                         class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" onclick="document.getElementById('profileForm').submit();"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                         <a
@@ -70,7 +70,7 @@
             <div class="container-fluid">
                 <div class="card shadow">
                     <div class="card-header py-3">
-                        <h4 class="modal-title">{{classId}}</h4>
+                        <h4 class="modal-title">{{classId}}&nbsp;&nbsp;&nbsp;{{className}}</h4>
                     </div>
                     <div class="card-body">
                         <div class="row" id="first-row">
