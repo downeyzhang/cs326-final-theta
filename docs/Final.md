@@ -111,7 +111,8 @@ A final up-to-date representation of your database including a brief description
 
 | Entity  | schema       | Description and relationship to other entities               |collection in the database|
 | ------- | ------------ | ------------------------------------------------------------ | ------------------------ |
-
+| user    |{username:   String, firstName:  String, lastName:   String, email:      String, password:   String, postPublished:[String], postAccepted:[String], wishList:   [String], address:    String, city:       String, country:    String, projects:   [String], comments:   [String]}|The user entity represents users. Username, firstName, lastName, email, password would be stored to database once the user register an account, user can login to their account based on their email and password. postPublished and postAccepted are arrays of objectId of post, represent post the user published and post the user accepted. wishList is also an array of onjectId of post that represents posts that the user interested in. address, city, and country are some general information about the user, these would be stored once user input these information in their profile. Projects are an array of id of project that represents the projects of posts that the user have accepted. Lastly, comments are an array of id of comments that represents all the comments the user published under posts.|users|
+| post    |{classId:    String, className:  String,  info:       String, postby:     String, score:      String, requirement:String, teammates:  String, comments:   [String]}|hello|posts|
 
 
 
