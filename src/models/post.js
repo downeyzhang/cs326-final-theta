@@ -6,7 +6,7 @@ var post = db.model("post", {
     info:       String, //course infomation
     postby:     String,
     score:      String,
-    require:    String,
+    requirement:    String,
     teammates:  String,
     comments:   [String]  // id of comments
 });

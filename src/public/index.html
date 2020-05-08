@@ -30,14 +30,11 @@
                 
 
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                        <form id="indexForm" method = "POST" action="/dashboard"><input id="page_input" value = "1" name="page" /></form>
+                        <form id="indexForm" method = "POST" action="/dashboard"><input id="page_input" type = "hidden" value = "1" name="page" /></form>
                         <form id="profileForm" method="GET" action="/profile"></form>
                         <form id="logoutForm" method="POST" action="/logout"></form>
                     <li class="nav-item" role="presentation"><a class="nav-link active" onclick="document.getElementById('indexForm').submit();"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" onclick="document.getElementById('profileForm').submit();"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="wishList.html"><i class="fas fa-heart"></i><span>Wish List</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="Post.html"><i class="far fa-envelope"></i><span>My Posts</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="project.html"><i class="fas fa-box-open"></i><span>My Team &amp; Project</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -77,13 +74,19 @@
                 <div class="d-sm-flex justify-content-between align-items-center mb-4">
                     <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-undo fa-sm text-white-50"></i>&nbsp;Refresh</a></div>
             </div>
-            <div class="row" id="card0">
+            <form id="form0" action='/postDetail' method='POST'>
+                <input type="hidden" name="classId" value="{{classIdArray[0]}}">
+                <input type="hidden" name="className" value="{{classNameArray[0]}}">
+                <input type="hidden" name="postby"  value="{{postNameArray[0]}}">
+            </form>
+            
+            <div class="row" id="card0" style="padding-bottom: 10px">
                 <div class="col">
                     <div class="card shadow border-left-primary post">
                         <div class="card-body">
                             <div class="row align-items-center no-gutters">
                                 <div class="col mr-2">
-                                    <a data-toggle="modal" href="#postModal">
+                                    <a data-toggle="modal" onclick="document.getElementById('form0').submit();">
                                         <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[0]}}</span></div>
                                         <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[0]}}</span></div>
                                     </a>
@@ -100,13 +103,19 @@
                 </div>
             </div>
 
-            <div class="row" id="card1">
+            <form id="form1" action='/postDetail' method='POST'>
+                <input type="hidden" name="classId" value="{{classIdArray[1]}}">
+                <input type="hidden" name="className" value="{{classNameArray[1]}}">
+                <input type="hidden" name="postby"  value="{{postNameArray[1]}}">
+            </form>
+
+            <div class="row" id="card1" style="padding-bottom: 10px">
                     <div class="col">
                         <div class="card shadow border-left-primary post">
                             <div class="card-body">
                                 <div class="row align-items-center no-gutters">
                                     <div class="col mr-2">
-                                        <a data-toggle="modal" href="#postModal">
+                                        <a data-toggle="modal" onclick="document.getElementById('form1').submit();">
                                             <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[1]}}</span></div>
                                             <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[1]}}</span></div>
                                         </a>
@@ -123,13 +132,20 @@
                     </div>
                 </div>
 
-                <div class="row" id="card2">
+
+                <form id="form2" action='/postDetail' method='POST'>
+                    <input type="hidden" name="classId" value="{{classIdArray[2]}}">
+                    <input type="hidden" name="className" value="{{classNameArray[2]}}">
+                    <input type="hidden" name="postby"  value="{{postNameArray[2]}}">
+                </form>
+
+                <div class="row" id="card2" style="padding-bottom: 10px">
                         <div class="col">
                             <div class="card shadow border-left-primary post">
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
-                                            <a data-toggle="modal" href="#postModal">
+                                            <a data-toggle="modal" onclick="document.getElementById('form2').submit();">
                                                 <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[2]}}</span></div>
                                                 <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[2]}}</span></div>
                                             </a>
@@ -146,13 +162,19 @@
                         </div>
                     </div>
 
-                    <div class="row" id="card3">
+                    <form id="form3" action='/postDetail' method='POST'>
+                        <input type="hidden" name="classId" value="{{classIdArray[3]}}">
+                        <input type="hidden" name="className" value="{{classNameArray[3]}}">
+                        <input type="hidden" name="postby"  value="{{postNameArray[3]}}">
+                    </form>
+
+                    <div class="row" id="card3" style="padding-bottom: 10px">
                             <div class="col">
                                 <div class="card shadow border-left-primary post">
                                     <div class="card-body">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col mr-2">
-                                                <a data-toggle="modal" href="#postModal">
+                                                <a data-toggle="modal" onclick="document.getElementById('form3').submit();">
                                                     <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[3]}}</span></div>
                                                     <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[3]}}</span></div>
                                                 </a>
@@ -169,13 +191,19 @@
                             </div>
                         </div>
 
-                        <div class="row" id="card4">
+                        <form id="form4" action='/postDetail' method='POST'>
+                            <input type="hidden" name="classId" value="{{classIdArray[4]}}">
+                            <input type="hidden" name="className" value="{{classNameArray[4]}}">
+                            <input type="hidden" name="postby"  value="{{postNameArray[4]}}">
+                        </form>
+
+                        <div class="row" id="card4" style="padding-bottom: 10px">
                                 <div class="col">
                                     <div class="card shadow border-left-primary post">
                                         <div class="card-body">
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col mr-2">
-                                                    <a data-toggle="modal" href="#postModal">
+                                                    <a data-toggle="modal" onclick="document.getElementById('form4').submit();"">
                                                         <div class="text-uppercase text-primary font-weight-bold text-xs mb-1" style="font-size: 15pt;"><span>{{classIdArray[4]}}</span></div>
                                                         <div class="text-dark font-weight-bold h5 mb-0"><span>{{classNameArray[4]}}</span></div>
                                                     </a>
@@ -191,8 +219,13 @@
                                     </div>
                                 </div>
                             </div>
-
-        </div>
+                        <!--
+                        <div style="float: right;">
+                            <a id="prevButton" style="margin: 10px; margin-right: 0px" class="btn btn-sm d-none d-sm-inline-block" role="button"><i class="fas fa-undo fa-sm text-white-50"></i>&nbsp;&lt;Prev</a>    
+                            <a id="nextButton" style="margin: 20px; margin-left:10px" class="btn btn-sm d-none d-sm-inline-block" role="button"><i class="fas fa-undo fa-sm text-white-50"></i>&nbsp;Next&gt;</a>
+                        </div>
+                        -->
+            </div>
         <footer class="bg-white sticky-footer">
             <div class="container my-auto">
                 <div class="text-center my-auto copyright"><span>Copyright © Brand 2020</span></div>
@@ -304,11 +337,30 @@
         if(length<=3){document.getElementById('card3').style.display="none"};
         if(length<=2){document.getElementById('card2').style.display="none"};
         if(length<=1){document.getElementById('card1').style.display="none"};
-        if(length<=0){document.getElementById('card3').style.display="none"};
-    </script>
+        if(length<=0){document.getElementById('card0').style.display="none"};
+        /*
+        var total = "{{total}}";
+        var currentPage = "{{page}}";
+        if(currentPage==1){
+            document.getElementById('prevButton').style.display="none";
+        }if(total<=5*currentPage){
+            document.getElementById('nextButton').style.display="none";
+        }
 
-    <script>
-        var testString = "{{className[0]}}"
+        function prePage(){
+            page = currentPage-1;
+            document.getElementById('page_input').value=page;
+            document.getElementById('indexForm').submit();
+        }
+
+        function nextPage(){
+            page=currentPage+1;
+            document.getElementById('page_input').value=page;
+            document.getElementById('indexForm').submit();
+        }
+        document.getElementById('prevButton').onclick="prePage()";
+        document.getElementById('prevButton').onclick="nextPage()";
+        */
     </script>
 </body>
 

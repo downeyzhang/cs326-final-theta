@@ -26,14 +26,11 @@
                     <div class="sidebar-brand-text mx-3"><span style="color: #373636;font-family: Nunito, sans-serif;">Create your Post</span></div>
                 </a>
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                        <form id="indexForm" method = "POST" action="/dashboard"><input id="page_input" value = "1" name="page" /></form>
+                        <form id="indexForm" method = "POST" action="/dashboard"><input id="page_input" type="hidden" value = "1" name="page" /></form>
                         <form id="profileForm" method="GET" action="/profile"></form>
                         <form id="logoutForm" method="POST" action="/logout"></form>
                     <li class="nav-item" role="presentation"><a class="nav-link" onclick="document.getElementById('indexForm').submit();"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" onclick="document.getElementById('profileForm').submit();"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="wishList.html"><i class="fas fa-heart"></i><span>Wish List</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="Post.html"><i class="far fa-envelope"></i><span>My Posts</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="project.html"><i class="fas fa-box-open"></i><span>My Team &amp; Project</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>

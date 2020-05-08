@@ -99,7 +99,7 @@ app.post("/login",async function(req,res){
                         }
                     }
                 }
-                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray});
+                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray, page:1, total:plength});
             }else{
                 res.render('login');
             }
@@ -150,7 +150,7 @@ app.post("/dashboard",async function(req,res){
                     }
                 }
 
-                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray});
+                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray, page:page,total:plength});
             } else {
                 // error
             }  
@@ -292,8 +292,8 @@ app.post("/logout",function(req,res){
 })
 
 
-//帖子相关   http://localhost:3000/${name}  =>  http://localhost:3000/post
-//查 
+//Post   http://localhost:3000/${name}  =>  http://localhost:3000/post
+//query
 app.get('/post', async function (req, res) {
     const promise = await Post.find({}).exec();
     console.log(promise);
@@ -345,7 +345,7 @@ app.post('/post',async function (req, res) {
                     }
                 }
 
-                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray});
+                res.render('index',{username:firstName+"_"+lastName, count:count,classNameArray:classNameArray, classIdArray:classIdArray, postNameArray:postNameArray, page:1, total:plength});
             } else {
                 // error
             }  
@@ -357,7 +357,38 @@ app.post('/post',async function (req, res) {
     }
 })
 
-//修改
+app.post('/postDetail',async function(req,res){
+    if(req.cookies['login']){
+        res.locals.login = req.cookies.login.email;
+        var email = req.cookies.login.email;
+        try{
+            const user = await User.findOne({'email':email});
+            if(user){
+                console.log("req.body:"+req.body.classId);
+                var classId = req.body.classId;
+                var className=req.body.className;
+                var postby = req.body.postby;
+                const post = await Post.findOne({'classId':classId,'className':className, 'postby':postby});
+                console.log(post);
+                if(post){
+                    var info = post.info;
+                    var requirement=post.requirement;
+                    var teammate = post.teammates;
+                    console.log(requirement);
+                    res.render('post',{classId:classId, className:className, info:info,postby:postby,requirement:requirement,teammate:teammate});
+                }else res.send('can not find post');
+            }else{
+                // error
+            }
+        }catch(err){
+
+        }
+    }else{
+        res.render('login',{username:username});
+    }
+});
+
+//update
 app.put('/post',async function (req, res) {
     const post = await Post.findOne({'id':req.body.id});
     console.log(post);
@@ -370,7 +401,7 @@ app.put('/post',async function (req, res) {
     res.json({message:true});
 })
 
-//删除  (http://localhost:3000/post/5eb36aaff162296b084c7093)
+//delete  (http://localhost:3000/post/5eb36aaff162296b084c7093)
 app.delete('/post/:id',async function (req, res) {
     const postId =  req.params.id
     console.log("postId:"+postId)
@@ -379,7 +410,7 @@ app.delete('/post/:id',async function (req, res) {
     res.json({message:promise});
 })
 
-//评论相关
+//Comment
 app.get('/comment', async function (req, res) {
     console.log("post:"+req.query.post)
     const promise = await Comment.find({}).exec();
@@ -447,8 +478,8 @@ app.get('/join', async function (req, res) {
 })
 
 
-//心愿相关
-//新增
+//WishList
+//New
 app.put('/wish',async function (req, res) {
     const email = req.body.email
     const user = await User.findOne({'email':email});
@@ -473,7 +504,7 @@ app.put('/wish',async function (req, res) {
 })
 
 
-//删除
+//Delete
 app.delete('/wish/:email/:postId',async function (req, res) {
     const email = req.params.email
     const user = await User.findOne({'email':email});
